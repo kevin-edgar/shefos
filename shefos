@@ -947,19 +947,19 @@ echo -n "
                           -> Введите значение : "
 read main_menu
       case "$main_menu" in
-         "1" ) clear ; pacman -Syy ; pacstrap -i /mnt mesa mesa-demos lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader network-manager-applet --noconfirm
+         "1" ) clear ; pacman -Syy ; basestrap -i /mnt mesa mesa-demos lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader network-manager-applet --noconfirm
 
         ;;
-         "2" ) clear ; pacman -Syy ; pacstrap -i /mnt mesa mesa-demos lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader network-manager-applet --noconfirm
+         "2" ) clear ; pacman -Syy ; basestrap -i /mnt mesa mesa-demos lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader network-manager-applet --noconfirm
 
         ;;
-         "3" ) clear ; pacman -Syy ; pacstrap -i /mnt mesa mesa-demos nvidia-dkms nvidia-utils lib32-nvidia-utils vulkan-icd-loader lib32-vulkan-icd-loader lib32-opencl-nvidia opencl-nvidia network-manager-applet --noconfirm
+         "3" ) clear ; pacman -Syy ; basestrap -i /mnt mesa mesa-demos nvidia-dkms nvidia-utils lib32-nvidia-utils vulkan-icd-loader lib32-vulkan-icd-loader lib32-opencl-nvidia opencl-nvidia network-manager-applet --noconfirm
 
         ;;
-         "4" ) clear ; pacman -Syy ; pacstrap -i /mnt mesa mesa-demos lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader lib32-opencl-nvidia opencl-nvidia network-manager-applet --noconfirm
+         "4" ) clear ; pacman -Syy ; basestrap -i /mnt mesa mesa-demos lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader lib32-opencl-nvidia opencl-nvidia network-manager-applet --noconfirm
 
         ;;
-         "5" ) clear ; pacman -Syy ; pacstrap -i /mnt mesa mesa-demos lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader network-manager-applet --noconfirm
+         "5" ) clear ; pacman -Syy ; basestrap -i /mnt mesa mesa-demos lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader network-manager-applet --noconfirm
       esac
 #-----------------------------------
 
@@ -967,20 +967,20 @@ pacman -Syy
 
 arch-chroot /mnt /bin/bash -c "pacman -Syyuu --noconfirm"
 
-pacstrap -i /mnt xorg xorg-server xdg-utils xorg-xinit xdg-user-dirs plasma sddm sddm-kcm konsole kmix dolphin nemo discover discover-snap manjaro-settings-manager manjaro-settings-manager-kcm manjaro-icons manjaro-printer print-manager kmix pavucontrol pipewire pipewire-jack pipewire-alsa pipewire-media-session flameshot kcalc ark screenfetch neofetch htop bpytop gnome-usage firefox gwenview dragon kwrite mousepad easyeffects conky gparted timeshift timeshift-autosnap-manjaro manjaro-input baobab libpamac libpamac-flatpak-plugin libpamac-snap-plugin pamac-cli pamac-gtk webapp-manager-manjaro noto-fonts-emoji ttf-font-awesome ttf-dejavu ttf-ubuntu-font-family libappimage appimagelauncher xapp-appimage-thumbnailer ffmpegthumbnailer ffmpegthumbs yay openvpn networkmanager-openvpn git wget cups manjaro-pipewire os-prober --noconfirm
+basestrap -i /mnt xorg xorg-server xdg-utils xorg-xinit xdg-user-dirs plasma sddm sddm-kcm konsole kmix dolphin nemo discover discover-snap manjaro-settings-manager manjaro-settings-manager-kcm manjaro-icons manjaro-printer print-manager kmix pavucontrol pipewire pipewire-jack pipewire-alsa pipewire-media-session flameshot kcalc ark screenfetch neofetch htop bpytop gnome-usage firefox gwenview dragon kwrite mousepad easyeffects conky gparted timeshift timeshift-autosnap-manjaro manjaro-input baobab libpamac libpamac-flatpak-plugin libpamac-snap-plugin pamac-cli pamac-gtk webapp-manager-manjaro noto-fonts-emoji ttf-font-awesome ttf-dejavu ttf-ubuntu-font-family libappimage appimagelauncher xapp-appimage-thumbnailer ffmpegthumbnailer ffmpegthumbs yay openvpn networkmanager-openvpn git wget cups manjaro-pipewire os-prober --noconfirm
 
 
 #--------------------------------------
 
 pacman -Syy
 
-pacstrap -i /mnt udisks2 gvfs-mtp gvfs-gphoto2 gvfs-afc gvfs-smb sshfs cups tumbler poppler-glib ffmpegthumbnailer freetype2 libgsf totem evince atril gnome-epub-thumbnailer file-roller file-roller unzip ntfs-3g imagemagick ffmpegthumbs --noconfirm
+basestrap -i /mnt udisks2 gvfs-mtp gvfs-gphoto2 gvfs-afc gvfs-smb sshfs cups tumbler poppler-glib ffmpegthumbnailer freetype2 libgsf totem evince atril gnome-epub-thumbnailer file-roller file-roller unzip ntfs-3g imagemagick ffmpegthumbs --noconfirm
 
 
 #-----------------------------------------
 
 
-pacstrap -i /mnt flac wavpack celt lame  a52dec  libdca  libmad  libmpcdec  opencore-amr opus  speex libvorbis faac faad2 libfdk-aac  fdkaac  jasper libwebp libavif  libheif aom dav1d rav1e svt-av1  libde265 libdv libmpeg2 schroedinger  libtheora  libvpx  x264 x265  xvidcore  mkvtoolnix-cli mkvtoolnix-gui  ogmtools gstreamer xine-lib gst-libav ffmpeg --noconfirm
+basestrap -i /mnt flac wavpack celt lame  a52dec  libdca  libmad  libmpcdec  opencore-amr opus  speex libvorbis faac faad2 libfdk-aac  fdkaac  jasper libwebp libavif  libheif aom dav1d rav1e svt-av1  libde265 libdv libmpeg2 schroedinger  libtheora  libvpx  x264 x265  xvidcore  mkvtoolnix-cli mkvtoolnix-gui  ogmtools gstreamer xine-lib gst-libav ffmpeg --noconfirm
 
 
 #-------------------------------------
